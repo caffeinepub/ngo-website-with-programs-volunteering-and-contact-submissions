@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 47,
+  "projectStateVersion": 59,
   "summary": "Build a website for an NGO.",
   "architectural_notes": [
     "NGO name: Samarpan Trust.",
@@ -16,9 +16,10 @@
   ],
   "known_issues": [
     "Homepage/impact metrics copy is incorrect: shows \"Countries Served: 15\" but should reference states instead of countries.",
-    "Donate/pledge form shows USD currency option/label; should use Indian Rupees (INR) instead."
+    "Donate/pledge form shows USD currency option/label; should use Indian Rupees (INR) instead.",
+    "Office address is still not displaying correctly/has not been updated across the site (user reports the address is still wrong)."
   ],
-  "isFixRequest": false,
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-responsive-ngo-marketing-website-with-these-top-level-pages-sections-home-about-programs-impact-get-involved-volunteer-donate-and-contact",
@@ -307,6 +308,78 @@
         "REQ-37"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-on-the-programs-impact-page-update-the-sustainable-agriculture-program-card-so-its-locations-served-text-displays-exactly-india-jharkhand-bihar-replacing-the-current-non-india-locations-list",
+      "title": "On the Programs & Impact page, update the \"Sustainable Agriculture\" program card so its \"Locations Served\" text displays exactly: \"India, Jharkhand, Bihar\" (replacing the current non-India locations list).",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-education-for-all-program-so-its-user-facing-locations-served-text-displays-exactly-india-remove-any-non-india-locations-anywhere-this-program-s-locations-are-shown-including-the-programs-impact-page",
+      "title": "Update the \"Education for All\" program so its user-facing \"Locations Served\" text displays exactly: \"India\" (remove any non-India locations) anywhere this program’s locations are shown (including the Programs & Impact page).",
+      "reqIds": [
+        "REQ-39"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-get-involved-volunteer-page-express-your-interest-form-add-a-new-user-entered-address-field-so-volunteers-can-provide-their-address-when-submitting-the-form",
+      "title": "On the Get Involved (Volunteer) page (Express Your Interest form), add a new user-entered \"Address\" field so volunteers can provide their address when submitting the form.",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-express-your-interest-form-submit-button-text-to-express-your-interest-when-not-in-the-pending-submitting-state",
+      "title": "Update the Express Your Interest form submit button text to \"Express Your Interest\" (when not in the pending/submitting state).",
+      "reqIds": [
+        "REQ-42"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-any-user-visible-year-copyright-text-across-the-site-to-display-2025-do-not-use-a-dynamically-computed-current-year",
+      "title": "Update any user-visible year/copyright text across the site to display 2025 (do not use a dynamically computed current year).",
+      "reqIds": [
+        "REQ-44"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-get-involved-volunteer-page-add-a-new-user-entered-field-labeled-contact-no-to-the-express-your-interest-form-and-include-it-in-the-data-submitted-when-the-form-is-submitted",
+      "title": "On the Get Involved (Volunteer) page, add a new user-entered field labeled \"Contact No\" to the \"Express Your Interest\" form and include it in the data submitted when the form is submitted.",
+      "reqIds": [
+        "REQ-45"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-frontend-canister-type-bindings-so-the-volunteerinterest-type-includes-the-new-contact-number-field-and-the-app-builds-successfully-end-to-end",
+      "title": "Update the frontend canister type bindings so the VolunteerInterest type includes the new contact number field and the app builds successfully end-to-end.",
+      "reqIds": [
+        "REQ-47"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-get-involved-volunteer-page-get-involved-our-address-block-so-it-displays-the-same-samarpan-trust-office-address-text-used-on-the-contact-page-and-in-the-footer-chhaperwa-sandh-barkagaon-hazaribagh-jharkhand-825311",
+      "title": "Update the Get Involved (Volunteer) page (/get-involved) \"Our Address\" block so it displays the same Samarpan Trust office address text used on the Contact page and in the footer: \"Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311\".",
+      "reqIds": [
+        "REQ-48"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-the-frontend-for-any-remaining-occurrences-of-the-old-address-text-currently-shown-on-the-get-involved-page-vill-bhagatpur-p-o-bhagatpur-p-s-bhagatpur-dist-samastipur-bihar-india-848503-and-replace-remove-them-so-the-old-address-is-not-displayed-anywhere-on-the-site",
+      "title": "Audit the frontend for any remaining occurrences of the old address text currently shown on the Get Involved page (\"Vill-Bhagatpur, P.O-Bhagatpur\", \"P.S-Bhagatpur, Dist-Samastipur\", \"Bihar, India - 848503\") and replace/remove them so the old address is not displayed anywhere on the site.",
+      "reqIds": [
+        "REQ-49"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -430,6 +503,66 @@
       "id": "AR-29",
       "summary": "Add a new program/initiative named \"Economic Empowerment\" and display its location(s) as: India, Jharkhand.",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Add a new program/initiative \"Sustainable Agriculture\" to the website and display its location(s) as: India, Jharkhand, Bihar.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-31",
+      "summary": "Add a new program/initiative named \"Education for All\" and display its location as: India.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-32",
+      "summary": "Update Get Involved/Volunteer page CTA/button text to \"Express Your Interest\" (volunteer interest form).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-34",
+      "summary": "Update the backend VolunteerInterest data model and submitVolunteerInterest endpoint to store the volunteer-provided address along with the existing fields, and ensure the frontend actor type bindings are updated accordingly.",
+      "reqIds": [
+        "REQ-41"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-35",
+      "summary": "Update the About page intro/hero copy to: \"About Samarpan Trust\" and \"Since 2021, we've been dedicated to creating positive change in communities worldwide through education, healthcare, and sustainable development.\"",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-36",
+      "summary": "Update any site year/copyright text to 2025 (\"Change 2025\").",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-37",
+      "summary": "Ensure the About page hero section text matches the provided English copy exactly: Title: \"About Samarpan Trust\" and paragraph: \"Since 2021, we've been dedicated to creating positive change in communities worldwide through education, healthcare, and sustainable development.\"",
+      "reqIds": [
+        "REQ-43"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-38",
+      "summary": "Add a user-entered \"Contact No\" (phone number) field to the \"Express Your Interest\" (volunteer interest) form and store it with the submission.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-40",
+      "summary": "Update the backend VolunteerInterest data model and submitVolunteerInterest endpoint to store a volunteer-provided contact number (\"contactNo\") along with the existing VolunteerInterest fields.",
+      "reqIds": [
+        "REQ-46"
+      ],
       "status": "pending"
     }
   ],

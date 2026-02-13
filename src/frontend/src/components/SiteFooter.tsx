@@ -1,9 +1,9 @@
 import { Link } from '@tanstack/react-router';
 import { SiFacebook, SiX, SiInstagram, SiLinkedin } from 'react-icons/si';
 import { Heart } from 'lucide-react';
+import { OFFICE_ADDRESS } from '@/constants/ngoContact';
 
 export default function SiteFooter() {
-  const currentYear = new Date().getFullYear();
   const appIdentifier = encodeURIComponent(
     typeof window !== 'undefined' ? window.location.hostname : 'ngo-site'
   );
@@ -60,7 +60,7 @@ export default function SiteFooter() {
               <p>Contact: 7979882539</p>
               <p>WhatsApp: 8651677735</p>
               <p>Office: 9162667748</p>
-              <p>Address: Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311</p>
+              <p>Address: {OFFICE_ADDRESS}</p>
             </div>
           </div>
 
@@ -110,7 +110,7 @@ export default function SiteFooter() {
 
         <div className="mt-8 border-t border-border/40 pt-8 text-center text-sm text-muted-foreground">
           <p>
-            © {currentYear} Samarpan Trust. All rights reserved.
+            © 2025 Samarpan Trust. All rights reserved.
           </p>
           <p className="mt-2 flex items-center justify-center gap-1">
             Built with <Heart className="h-4 w-4 fill-destructive text-destructive" /> using{' '}

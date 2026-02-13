@@ -2,10 +2,13 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-economic-empowerment-program-on-the-programs-impact-page-so-its-locations-served-text-displays-the-location-as-india-jharkhand-replacing-the-current-non-india-locations-list-apply-this-change-anywhere-the-site-currently-displays-the-economic-empowerment-program-s-locations",
-      "featureTitle": "Update the \"Economic Empowerment\" program on the Programs & Impact page so its \"Locations Served\" text displays the location as \"India, Jharkhand\" (replacing the current non-India locations list). Apply this change anywhere the site currently displays the Economic Empowerment program’s locations.",
+      "featureId": "feature-update-the-get-involved-volunteer-page-get-involved-our-address-block-so-it-displays-the-same-samarpan-trust-office-address-text-used-on-the-contact-page-and-in-the-footer-chhaperwa-sandh-barkagaon-hazaribagh-jharkhand-825311",
+      "featureTitle": "Update the Get Involved (Volunteer) page (/get-involved) \"Our Address\" block so it displays the same Samarpan Trust office address text used on the Contact page and in the footer: \"Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311\".",
       "files": [
-        "frontend/src/pages/ProgramsImpactPage.tsx"
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/constants/ngoContact.ts",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/GetInvolvedPage.tsx"
       ],
       "components": [
         "authorization@4.0.0",
@@ -16,7 +19,27 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-37"
+        "REQ-48"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-audit-the-frontend-for-any-remaining-occurrences-of-the-old-address-text-currently-shown-on-the-get-involved-page-vill-bhagatpur-p-o-bhagatpur-p-s-bhagatpur-dist-samastipur-bihar-india-848503-and-replace-remove-them-so-the-old-address-is-not-displayed-anywhere-on-the-site",
+      "featureTitle": "Audit the frontend for any remaining occurrences of the old address text currently shown on the Get Involved page (\"Vill-Bhagatpur, P.O-Bhagatpur\", \"P.S-Bhagatpur, Dist-Samastipur\", \"Bihar, India - 848503\") and replace/remove them so the old address is not displayed anywhere on the site.",
+      "files": [
+        "frontend/src/constants/ngoContact.ts",
+        "frontend/src/pages/GetInvolvedPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-49"
       ],
       "confidence": "high"
     }

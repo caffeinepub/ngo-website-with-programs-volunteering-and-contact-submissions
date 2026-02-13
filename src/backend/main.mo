@@ -1,11 +1,14 @@
+import AccessControl "authorization/access-control";
 import Array "mo:core/Array";
+import Iter "mo:core/Iter";
 import Map "mo:core/Map";
+
+import Principal "mo:core/Principal";
 import Runtime "mo:core/Runtime";
 import Text "mo:core/Text";
-import Iter "mo:core/Iter";
-import Principal "mo:core/Principal";
 import MixinAuthorization "authorization/MixinAuthorization";
-import AccessControl "authorization/access-control";
+
+// Enable automatic actor migration on upgrade
 
 actor {
   // Initialize the authorization system state
@@ -15,9 +18,11 @@ actor {
   type VolunteerInterest = {
     name : Text;
     email : Text;
+    address : Text;
     areaOfInterest : Text;
     availability : Text;
     message : Text;
+    contactNo : Text; // New field for phone number
   };
 
   type ContactMessage = {

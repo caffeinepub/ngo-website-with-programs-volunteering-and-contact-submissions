@@ -1,33 +1,39 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-13T20:35:29.010Z",
-  "summary": "REQ-37 is implemented on the Programs & Impact page by changing the Economic Empowerment program's `locations` field to `India, Jharkhand` in `frontend/src/pages/ProgramsImpactPage.tsx`. However, based on the provided diff summary, there is not enough evidence that the previous locations text is removed everywhere else on the site or that all other displays of the Economic Empowerment locations were updated.",
+  "generatedAt": "2026-02-13T21:09:01.463Z",
+  "summary": "REQ-48 appears implemented by updating the Get Involved page to use a shared OFFICE_ADDRESS constant with the correct Jharkhand address text. However, REQ-49 (site-wide removal of the old Bihar address strings) cannot be fully verified from the provided diff summary because it doesn’t show a comprehensive removal of those old strings beyond the updated Get Involved page and refactoring Contact/Footer to use the constant.",
   "missing_requirements": [
     {
-      "id": "REQ-37",
-      "requirement": "Apply the Economic Empowerment location change anywhere the site currently displays the program’s locations, and ensure the old text \"Cambodia, Myanmar, Bolivia, Nicaragua\" is no longer displayed anywhere on the site.",
-      "reason": "The diff only shows the location update in `ProgramsImpactPage.tsx`. No other UI locations (e.g., homepage featured programs preview or any other components/pages that might also display program locations) are shown as updated, so site-wide removal of the old text cannot be confirmed from this diff summary.",
+      "id": "REQ-49",
+      "requirement": "Audit the frontend for any remaining occurrences of the old address text (\"Vill-Bhagatpur, P.O-Bhagatpur\", \"P.S-Bhagatpur, Dist-Samastipur\", \"Bihar, India - 848503\") and replace/remove them so the old address is not displayed anywhere on the site.",
+      "reason": "The diff summary shows the Get Involved page now imports and presumably displays OFFICE_ADDRESS, and Footer/Contact were refactored to use the same constant, but it does not provide evidence of a site-wide search/removal of the old address strings across all other pages/components where they might still exist.",
       "evidence": [
-        "frontend/src/pages/ProgramsImpactPage.tsx (shows updated locations to \"India, Jharkhand\")",
-        "file-diff indicates only 3 modified files total, with no other program/location display code changes shown"
+        "frontend/src/pages/GetInvolvedPage.tsx",
+        "frontend/src/constants/ngoContact.ts",
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/pages/ContactPage.tsx"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Updated/maintained repository metadata/documentation files unrelated to REQ-37 (frontend file summary and project state/versioning).",
-      "reason": "REQ-37 only requests changing the displayed location text for a specific program; updating `frontend-file-summaries.txt` and `project_state.json` is not requested as part of that requirement.",
+      "description": "Centralized the office address into a new shared constant module and refactored Contact page and Footer to import it.",
+      "reason": "The request only asked to fix the Get Involved page address and remove old address occurrences; it did not request creating a new constants module or refactoring other pages to use it (even if it helps consistency).",
       "evidence": [
-        "frontend-file-summaries.txt",
-        "project_state.json"
+        "frontend/src/constants/ngoContact.ts",
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/pages/ContactPage.tsx"
       ]
     }
   ],
-  "confidence": 0.62,
+  "confidence": 0.64,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/src/pages/ProgramsImpactPage.tsx",
+    "frontend/src/components/SiteFooter.tsx",
+    "frontend/src/constants/ngoContact.ts",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/GetInvolvedPage.tsx",
     "project_state.json"
   ]
 }

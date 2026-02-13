@@ -94,6 +94,8 @@ export interface VolunteerInterest {
     email: string;
     availability: string;
     message: string;
+    address: string;
+    contactNo: string;
     areaOfInterest: string;
 }
 export interface ContactMessage {

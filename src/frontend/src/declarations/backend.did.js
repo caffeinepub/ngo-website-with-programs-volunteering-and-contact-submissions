@@ -35,6 +35,8 @@ export const VolunteerInterest = IDL.Record({
   'email' : IDL.Text,
   'availability' : IDL.Text,
   'message' : IDL.Text,
+  'address' : IDL.Text,
+  'contactNo' : IDL.Text,
   'areaOfInterest' : IDL.Text,
 });
 
@@ -107,6 +109,8 @@ export const idlFactory = ({ IDL }) => {
     'email' : IDL.Text,
     'availability' : IDL.Text,
     'message' : IDL.Text,
+    'address' : IDL.Text,
+    'contactNo' : IDL.Text,
     'areaOfInterest' : IDL.Text,
   });
   

@@ -1,33 +1,51 @@
 {
   "kind": "build_request",
-  "title": "Update Economic Empowerment program location to India (Jharkhand)",
+  "title": "Fix incorrect office address displayed on Get Involved (Volunteer) page",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-37",
-      "text": "Update the \"Economic Empowerment\" program on the Programs & Impact page so its \"Locations Served\" text displays the location as \"India, Jharkhand\" (replacing the current non-India locations list). Apply this change anywhere the site currently displays the Economic Empowerment program’s locations.",
+      "id": "REQ-48",
+      "text": "Update the Get Involved (Volunteer) page (/get-involved) \"Our Address\" block so it displays the same Samarpan Trust office address text used on the Contact page and in the footer: \"Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311\".",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-3"
         ],
         "quotes": [
-          "Economic Empowerment \n\nLocation  India Jharkhand"
+          "Our address Abhi bhi so kar raha hai"
         ]
       },
       "acceptanceCriteria": [
-        "On /programs, the Economic Empowerment program card shows \"Locations Served\" as exactly: \"India, Jharkhand\".",
-        "The previous locations text \"Cambodia, Myanmar, Bolivia, Nicaragua\" is no longer displayed anywhere on the site."
+        "On /get-involved, the \"Our Address\" section no longer shows the old Bihar address lines and instead shows the address text: \"Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311\".",
+        "The updated address is visible in the UI without requiring authentication and matches the address shown on the Contact page and in the footer."
+      ]
+    },
+    {
+      "id": "REQ-49",
+      "text": "Audit the frontend for any remaining occurrences of the old address text currently shown on the Get Involved page (\"Vill-Bhagatpur, P.O-Bhagatpur\", \"P.S-Bhagatpur, Dist-Samastipur\", \"Bihar, India - 848503\") and replace/remove them so the old address is not displayed anywhere on the site.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-3"
+        ],
+        "quotes": [
+          "Our address Abhi bhi so kar raha hai"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A site-wide search for the old address strings returns no user-visible occurrences in the built UI.",
+        "The only user-visible office address displayed across the site is consistent with: \"Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311\"."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files in frontend immutablePaths (authentication hooks, main.tsx, or frontend/src/components/ui).",
-    "Keep all backend logic in the single Motoko actor (backend/main.mo); do not add additional backend services."
+    "Do not edit files under frontend/src/components/ui (Shadcn UI components); compose them instead.",
+    "Do not modify immutable frontend hook files listed in SYSTEM_CONTEXT (e.g., frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx).",
+    "Keep backend as a single Motoko actor; no backend changes are required for this address display fix."
   ],
   "nonGoals": [
-    "Do not change the Economic Empowerment program title, status, description, or impact metrics.",
-    "Do not add new forms, backend storage, or admin functionality related to programs."
+    "Changing any phone numbers, email, WhatsApp, or other contact details beyond correcting the displayed office address.",
+    "Adding new pages, forms, or backend storage related to addresses."
   ],
   "imageRequirements": {
     "required": [],

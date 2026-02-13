@@ -9,11 +9,14 @@ import { Badge } from '@/components/ui/badge';
 import FormStatusBanner from '@/components/FormStatusBanner';
 import { useSubmitVolunteerInterest } from '@/hooks/useNgoSubmissions';
 import { Heart, Users, BookOpen, Stethoscope, Droplet, Home, MapPin, Leaf } from 'lucide-react';
+import { OFFICE_ADDRESS } from '@/constants/ngoContact';
 
 export default function GetInvolvedPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    address: '',
+    contactNo: '',
     areaOfInterest: '',
     availability: '',
     message: '',
@@ -54,6 +57,8 @@ export default function GetInvolvedPage() {
       setFormData({
         name: '',
         email: '',
+        address: '',
+        contactNo: '',
         areaOfInterest: '',
         availability: '',
         message: '',
@@ -214,11 +219,9 @@ export default function GetInvolvedPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <address className="not-italic text-muted-foreground space-y-1">
+              <address className="not-italic text-muted-foreground">
                 <p className="font-semibold text-foreground">Samarpan Trust</p>
-                <p>Vill-Bhagatpur, P.O-Bhagatpur</p>
-                <p>P.S-Bhagatpur, Dist-Samastipur</p>
-                <p>Bihar, India - 848503</p>
+                <p>{OFFICE_ADDRESS}</p>
               </address>
             </CardContent>
           </Card>
@@ -268,6 +271,28 @@ export default function GetInvolvedPage() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="contactNo">Contact No</Label>
+                  <Input
+                    id="contactNo"
+                    type="tel"
+                    placeholder="Enter your contact number"
+                    value={formData.contactNo}
+                    onChange={(e) => setFormData({ ...formData, contactNo: e.target.value })}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="address">Address</Label>
+                  <Textarea
+                    id="address"
+                    placeholder="Enter your address (optional)"
+                    rows={3}
+                    value={formData.address}
+                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                   />
                 </div>
 
@@ -327,7 +352,7 @@ export default function GetInvolvedPage() {
                   className="w-full"
                   disabled={submitMutation.isPending}
                 >
-                  {submitMutation.isPending ? 'Submitting...' : 'Submit Interest'}
+                  {submitMutation.isPending ? 'Submitting...' : 'Express Your Interest'}
                 </Button>
               </form>
             </CardContent>

@@ -15,7 +15,7 @@ export default function ProgramsImpactPage() {
         '500+ teachers trained',
         '100,000+ books distributed',
       ],
-      locations: 'Kenya, Uganda, Tanzania, India',
+      locations: 'India',
     },
     {
       icon: Heart,
@@ -54,7 +54,7 @@ export default function ProgramsImpactPage() {
         '100+ farming cooperatives established',
         '20,000+ families benefiting',
       ],
-      locations: 'Rwanda, Malawi, Zimbabwe, Guatemala',
+      locations: 'India, Jharkhand, Bihar',
     },
     {
       icon: Home,

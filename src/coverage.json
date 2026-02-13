@@ -1,24 +1,43 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-13T20:35:29.013Z",
+  "generatedAt": "2026-02-13T21:09:01.467Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 1,
-    "implemented": 1,
+    "total": 2,
+    "implemented": 2,
     "items": [
       {
-        "id": "REQ-37",
-        "summary": "Update the \"Economic Empowerment\" program on the Programs & Impact page so its \"Locations Served\" text displays the location as \"India, Jharkhand\" (replacing the current non-India locations list). Apply this change anywhere the site currently displays the Economic Empowerment program’s locations.",
+        "id": "REQ-48",
+        "summary": "Update the Get Involved (Volunteer) page (/get-involved) \"Our Address\" block so it displays the same Samarpan Trust office address text used on the Contact page and in the footer: \"Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311\".",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/ProgramsImpactPage.tsx"
+          "frontend/src/constants/ngoContact.ts",
+          "frontend/src/pages/GetInvolvedPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/components/SiteFooter.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/ProgramsImpactPage.tsx"
+          "frontend/src/constants/ngoContact.ts",
+          "frontend/src/pages/GetInvolvedPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/components/SiteFooter.tsx"
+        ]
+      },
+      {
+        "id": "REQ-49",
+        "summary": "Audit the frontend for any remaining occurrences of the old address text currently shown on the Get Involved page (\"Vill-Bhagatpur, P.O-Bhagatpur\", \"P.S-Bhagatpur, Dist-Samastipur\", \"Bihar, India - 848503\") and replace/remove them so the old address is not displayed anywhere on the site.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/GetInvolvedPage.tsx",
+          "frontend/src/constants/ngoContact.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/GetInvolvedPage.tsx",
+          "frontend/src/constants/ngoContact.ts"
         ]
       }
     ]
@@ -28,7 +47,10 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/pages/ProgramsImpactPage.tsx",
+    "frontend/src/components/SiteFooter.tsx",
+    "frontend/src/constants/ngoContact.ts",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/GetInvolvedPage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

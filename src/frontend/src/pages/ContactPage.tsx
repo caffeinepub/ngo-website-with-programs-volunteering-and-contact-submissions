@@ -8,6 +8,7 @@ import FormStatusBanner from '@/components/FormStatusBanner';
 import { useSubmitContactMessage } from '@/hooks/useNgoSubmissions';
 import { Mail, Phone, MapPin, MessageSquare } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
+import { OFFICE_ADDRESS } from '@/constants/ngoContact';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -91,7 +92,7 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: 'Address',
-      content: 'Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311',
+      content: OFFICE_ADDRESS,
       link: null,
     },
   ];
@@ -112,32 +113,34 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Info Cards */}
+      {/* Contact Information Cards */}
       <section className="container py-16 md:py-24">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16">
           {contactInfo.map((info, index) => {
             const Icon = info.icon;
+            const content = info.link ? (
+              <a
+                href={info.link}
+                className="text-primary hover:underline"
+                target={info.link.startsWith('http') ? '_blank' : undefined}
+                rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+              >
+                {info.content}
+              </a>
+            ) : (
+              <span className="text-muted-foreground">{info.content}</span>
+            );
+
             return (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index}>
                 <CardHeader>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-2">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="text-lg">{info.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {info.link ? (
-                    <a
-                      href={info.link}
-                      className="text-muted-foreground hover:text-foreground transition-colors"
-                      target={info.link.startsWith('http') ? '_blank' : undefined}
-                      rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    >
-                      {info.content}
-                    </a>
-                  ) : (
-                    <p className="text-muted-foreground">{info.content}</p>
-                  )}
+                  <CardDescription className="text-sm">{content}</CardDescription>
                 </CardContent>
               </Card>
             );
@@ -146,14 +149,17 @@ export default function ContactPage() {
 
         {/* Contact Form */}
         <div className="max-w-2xl mx-auto">
+          <div className="space-y-4 text-center mb-8">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Send Us a Message
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Fill out the form below and we'll get back to you as soon as possible.
+            </p>
+          </div>
+
           <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Send Us a Message</CardTitle>
-              <CardDescription>
-                Fill out the form below and we'll get back to you as soon as possible.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
+            <CardContent className="pt-6">
               <form onSubmit={handleSubmit} className="space-y-6">
                 {formStatus && (
                   <FormStatusBanner
@@ -163,28 +169,25 @@ export default function ContactPage() {
                 )}
 
                 <div className="space-y-2">
-                  <Label htmlFor="name">
-                    Name <span className="text-destructive">*</span>
-                  </Label>
+                  <Label htmlFor="name">Full Name *</Label>
                   <Input
                     id="name"
+                    type="text"
+                    placeholder="Enter your full name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="Your full name"
                     required
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">
-                    Email <span className="text-destructive">*</span>
-                  </Label>
+                  <Label htmlFor="email">Email Address *</Label>
                   <Input
                     id="email"
                     type="email"
+                    placeholder="your.email@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="your.email@example.com"
                     required
                   />
                 </div>
@@ -193,29 +196,27 @@ export default function ContactPage() {
                   <Label htmlFor="subject">Subject</Label>
                   <Input
                     id="subject"
+                    type="text"
+                    placeholder="What is this regarding?"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="What is this regarding?"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">
-                    Message <span className="text-destructive">*</span>
-                  </Label>
+                  <Label htmlFor="message">Message *</Label>
                   <Textarea
                     id="message"
+                    placeholder="Tell us how we can help you..."
+                    rows={6}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell us more about your inquiry..."
-                    rows={6}
                     required
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  size="lg"
                   className="w-full"
                   disabled={submitMutation.isPending}
                 >
@@ -231,59 +232,34 @@ export default function ContactPage() {
       <section className="bg-muted/30 py-16 md:py-24">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center space-y-4 mb-12">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Quick answers to common questions about Samarpan Trust
-              </p>
-            </div>
-
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-12">
+              Frequently Asked Questions
+            </h2>
             <div className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">How can I volunteer with Samarpan Trust?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Visit our Get Involved page to learn about current volunteer opportunities and submit your interest form. We'll match you with programs that align with your skills and availability.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Are donations tax-deductible?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Yes, Samarpan Trust is a registered non-profit organization. All donations are tax-deductible to the extent allowed by law. You will receive a receipt for your records.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Where does Samarpan Trust operate?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    We currently operate programs in 15 countries across Asia, Africa, and South America, focusing on communities with the greatest need for education, healthcare, and sustainable development support.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">How can I stay updated on Samarpan Trust's work?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Follow us on social media and check our website regularly for the latest updates on our programs, impact stories, and upcoming events. You can also contact us to join our mailing list.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold">How can I get involved with Samarpan Trust?</h3>
+                <p className="text-muted-foreground">
+                  There are many ways to get involved! You can volunteer your time, make a donation, or partner with us on specific projects. Visit our Get Involved page to learn more about current opportunities.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold">Where does Samarpan Trust operate?</h3>
+                <p className="text-muted-foreground">
+                  We currently operate across 15 states in India, with a focus on education, healthcare, and sustainable development initiatives in underserved communities.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold">How are donations used?</h3>
+                <p className="text-muted-foreground">
+                  Every rupee donated goes directly toward our programs. We maintain complete transparency in our financial operations and provide regular updates to our donors about how their contributions are making an impact.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-semibold">Can I visit your projects in person?</h3>
+                <p className="text-muted-foreground">
+                  Yes! We welcome visits from donors, volunteers, and partners. Please contact us in advance to arrange a visit to one of our project sites.
+                </p>
+              </div>
             </div>
           </div>
         </div>
