@@ -42,6 +42,12 @@ const programsRoute = createRoute({
   component: ProgramsImpactPage,
 });
 
+const programsImpactRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/programs-impact',
+  component: ProgramsImpactPage,
+});
+
 const getInvolvedRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/get-involved',
@@ -64,6 +70,7 @@ const routeTree = rootRoute.addChildren([
   indexRoute,
   aboutRoute,
   programsRoute,
+  programsImpactRoute,
   getInvolvedRoute,
   donateRoute,
   contactRoute,

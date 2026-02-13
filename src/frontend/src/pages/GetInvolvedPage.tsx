@@ -5,9 +5,10 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import FormStatusBanner from '@/components/FormStatusBanner';
 import { useSubmitVolunteerInterest } from '@/hooks/useNgoSubmissions';
-import { Heart, Users, BookOpen, Stethoscope, Droplet, Home } from 'lucide-react';
+import { Heart, Users, BookOpen, Stethoscope, Droplet, Home, MapPin, Leaf } from 'lucide-react';
 
 export default function GetInvolvedPage() {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ export default function GetInvolvedPage() {
     message: '',
   });
 
-  const [formStatus, setFormStatus] = useState<{ type: 'success' | 'error'; message: string } | null>(null);
+  const [formStatus, setFormStatus] = useState<{ status: 'success' | 'error'; message: string } | null>(null);
 
   const submitMutation = useSubmitVolunteerInterest();
 
@@ -29,7 +30,7 @@ export default function GetInvolvedPage() {
     // Validation
     if (!formData.name.trim() || !formData.email.trim() || !formData.areaOfInterest || !formData.availability) {
       setFormStatus({
-        type: 'error',
+        status: 'error',
         message: 'Please fill in all required fields.',
       });
       return;
@@ -37,7 +38,7 @@ export default function GetInvolvedPage() {
 
     if (!formData.email.includes('@')) {
       setFormStatus({
-        type: 'error',
+        status: 'error',
         message: 'Please enter a valid email address.',
       });
       return;
@@ -46,7 +47,7 @@ export default function GetInvolvedPage() {
     try {
       await submitMutation.mutateAsync(formData);
       setFormStatus({
-        type: 'success',
+        status: 'success',
         message: 'Thank you for your interest! We will contact you soon with volunteer opportunities.',
       });
       // Reset form
@@ -59,7 +60,7 @@ export default function GetInvolvedPage() {
       });
     } catch (error) {
       setFormStatus({
-        type: 'error',
+        status: 'error',
         message: 'Failed to submit your interest. Please try again.',
       });
     }
@@ -75,11 +76,14 @@ export default function GetInvolvedPage() {
       icon: Stethoscope,
       title: 'Healthcare Initiatives',
       description: 'Support medical clinics, health education campaigns, or maternal and child health programs.',
+      status: 'Active',
+      locations: 'Jharkhand, Bihar, Dehli',
     },
     {
       icon: Droplet,
-      title: 'Clean Water Projects',
+      title: 'Clean Water Initiative',
       description: 'Assist with water infrastructure development, maintenance, and community education.',
+      locations: 'Jharkhand, Bihar',
     },
     {
       icon: Home,
@@ -96,6 +100,11 @@ export default function GetInvolvedPage() {
       title: 'Fundraising & Events',
       description: 'Help organize fundraising campaigns, awareness events, or donor engagement activities.',
     },
+    {
+      icon: Leaf,
+      title: 'Save Environment',
+      description: 'Join our environmental conservation efforts including tree planting, waste management, and sustainability education programs.',
+    },
   ];
 
   return (
@@ -105,7 +114,7 @@ export default function GetInvolvedPage() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center space-y-6">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Get Involved
+              Volunteer With Us
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">
               Join our community of dedicated volunteers making a real difference in the lives of people around the world. Your time and skills can create lasting impact.
@@ -133,12 +142,25 @@ export default function GetInvolvedPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-4">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="text-xl">{opportunity.title}</CardTitle>
+                  <div className="flex items-center gap-2 mb-2">
+                    <CardTitle className="text-xl">{opportunity.title}</CardTitle>
+                    {opportunity.status && (
+                      <Badge variant="default" className="ml-auto">
+                        {opportunity.status}
+                      </Badge>
+                    )}
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <CardDescription className="text-sm leading-relaxed">
                     {opportunity.description}
                   </CardDescription>
+                  {opportunity.locations && (
+                    <div className="mt-4 flex items-start gap-2 text-sm text-muted-foreground">
+                      <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                      <span>{opportunity.locations}</span>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             );
@@ -179,28 +201,54 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      {/* Volunteer Interest Form */}
+      {/* Address Section */}
       <section className="container py-16 md:py-24">
         <div className="max-w-2xl mx-auto">
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">Express Your Interest</CardTitle>
-              <CardDescription>
-                Fill out the form below to let us know you're interested in volunteering. We'll reach out with opportunities that match your interests and availability.
-              </CardDescription>
+              <div className="flex items-center gap-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10">
+                  <MapPin className="h-5 w-5 text-primary" />
+                </div>
+                <CardTitle>Our Address</CardTitle>
+              </div>
             </CardHeader>
             <CardContent>
-              {formStatus && (
-                <FormStatusBanner
-                  status={formStatus.type}
-                  message={formStatus.message}
-                />
-              )}
+              <address className="not-italic text-muted-foreground space-y-1">
+                <p className="font-semibold text-foreground">Samarpan Trust</p>
+                <p>Vill-Bhagatpur, P.O-Bhagatpur</p>
+                <p>P.S-Bhagatpur, Dist-Samastipur</p>
+                <p>Bihar, India - 848503</p>
+              </address>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Volunteer Interest Form */}
+      <section className="container py-16 md:py-24">
+        <div className="max-w-2xl mx-auto">
+          <div className="space-y-4 text-center mb-8">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              Express Your Interest
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Fill out the form below and we'll get in touch with you about volunteer opportunities that match your interests and availability.
+            </p>
+          </div>
+
+          <Card>
+            <CardContent className="pt-6">
               <form onSubmit={handleSubmit} className="space-y-6">
+                {formStatus && (
+                  <FormStatusBanner
+                    status={formStatus.status}
+                    message={formStatus.message}
+                  />
+                )}
+
                 <div className="space-y-2">
-                  <Label htmlFor="name">
-                    Full Name <span className="text-destructive">*</span>
-                  </Label>
+                  <Label htmlFor="name">Full Name *</Label>
                   <Input
                     id="name"
                     type="text"
@@ -212,9 +260,7 @@ export default function GetInvolvedPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="email">
-                    Email Address <span className="text-destructive">*</span>
-                  </Label>
+                  <Label htmlFor="email">Email Address *</Label>
                   <Input
                     id="email"
                     type="email"
@@ -226,9 +272,7 @@ export default function GetInvolvedPage() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="areaOfInterest">
-                    Area of Interest <span className="text-destructive">*</span>
-                  </Label>
+                  <Label htmlFor="areaOfInterest">Area of Interest *</Label>
                   <Select
                     value={formData.areaOfInterest}
                     onValueChange={(value) => setFormData({ ...formData, areaOfInterest: value })}
@@ -239,18 +283,17 @@ export default function GetInvolvedPage() {
                     <SelectContent>
                       <SelectItem value="education">Education Programs</SelectItem>
                       <SelectItem value="healthcare">Healthcare Initiatives</SelectItem>
-                      <SelectItem value="water">Clean Water Projects</SelectItem>
+                      <SelectItem value="water">Clean Water Initiative</SelectItem>
                       <SelectItem value="community">Community Development</SelectItem>
                       <SelectItem value="admin">Administrative Support</SelectItem>
                       <SelectItem value="fundraising">Fundraising & Events</SelectItem>
+                      <SelectItem value="environment">Save Environment</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="availability">
-                    Availability <span className="text-destructive">*</span>
-                  </Label>
+                  <Label htmlFor="availability">Availability *</Label>
                   <Select
                     value={formData.availability}
                     onValueChange={(value) => setFormData({ ...formData, availability: value })}
@@ -261,27 +304,26 @@ export default function GetInvolvedPage() {
                     <SelectContent>
                       <SelectItem value="full-time">Full-time (40+ hours/week)</SelectItem>
                       <SelectItem value="part-time">Part-time (20-40 hours/week)</SelectItem>
-                      <SelectItem value="flexible">Flexible (10-20 hours/week)</SelectItem>
-                      <SelectItem value="occasional">Occasional (as needed)</SelectItem>
+                      <SelectItem value="weekends">Weekends only</SelectItem>
+                      <SelectItem value="flexible">Flexible/As needed</SelectItem>
                       <SelectItem value="remote">Remote only</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="message">Additional Information (Optional)</Label>
+                  <Label htmlFor="message">Additional Information</Label>
                   <Textarea
                     id="message"
-                    placeholder="Tell us about your skills, experience, or any specific interests..."
+                    placeholder="Tell us about your skills, experience, or any questions you have..."
+                    rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    rows={4}
                   />
                 </div>
 
                 <Button
                   type="submit"
-                  size="lg"
                   className="w-full"
                   disabled={submitMutation.isPending}
                 >

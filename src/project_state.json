@@ -1,18 +1,24 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 21,
+  "projectStateVersion": 47,
   "summary": "Build a website for an NGO.",
   "architectural_notes": [
     "NGO name: Samarpan Trust.",
     "Public contact details to display: Contact no 7979882539; WhatsApp no 8651677735; Email samarpantrust2@gmail.com; Office no 9162667748.",
     "Office address to display: Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311.",
     "Year text to use: 2025 (likely footer/copyright).",
-    "Tagline to use on the site: \"Making a Difference Since 2021\"."
+    "Tagline to use on the site: \"Making a Difference Since 2021\".",
+    "Director of Fundraising name(s) to display: Purushotam Kumar and Chandani Kumari.",
+    "Executive Director name to display: Purushotam Kumar.",
+    "Ensure \"Our Story\" section references year 2021 consistently (founding/start year).",
+    "Director of Programs name(s) to display: Jitendra Kumar and Prabhu Saw.",
+    "Director of Operations name to display: Kanhaiya Kumar."
   ],
   "known_issues": [
-    "Homepage/impact metrics copy is incorrect: shows \"Countries Served: 15\" but should reference states instead of countries."
+    "Homepage/impact metrics copy is incorrect: shows \"Countries Served: 15\" but should reference states instead of countries.",
+    "Donate/pledge form shows USD currency option/label; should use Indian Rupees (INR) instead."
   ],
-  "isFixRequest": true,
+  "isFixRequest": false,
   "existing_features": [
     {
       "id": "feature-create-a-responsive-ngo-marketing-website-with-these-top-level-pages-sections-home-about-programs-impact-get-involved-volunteer-donate-and-contact",
@@ -173,6 +179,134 @@
         "REQ-21"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-donate-page-donation-pledge-ui-to-use-indian-rupees-inr-instead-of-usd-removing-usd-wording-anywhere-it-appears-on-the-donate-page",
+      "title": "Update the Donate page donation pledge UI to use Indian Rupees (INR) instead of USD, removing USD wording anywhere it appears on the Donate page.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-about-page-our-leadership-team-section-so-the-director-of-fundraising-name-s-display-as-purushotam-kumar-and-chandani-kumari-instead-of-the-current-placeholder-person",
+      "title": "Update the About page (Our Leadership Team section) so the Director of Fundraising name(s) display as \"Purushotam Kumar\" and \"Chandani Kumari\" instead of the current placeholder person.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-about-page-our-leadership-team-section-so-the-team-member-with-role-executive-director-displays-the-name-purushotam-kumar-instead-of-the-current-placeholder-name",
+      "title": "Update the About page (Our Leadership Team section) so the team member with role \"Executive Director\" displays the name \"Purushotam Kumar\" instead of the current placeholder name.",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-about-page-hero-blurb-so-it-reflects-the-year-2021-instead-of-2010",
+      "title": "Update the About page hero blurb so it reflects the year 2021 instead of 2010.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-about-page-our-story-section-text-to-reflect-the-year-2021-instead-of-2010-and-to-state-that-the-organization-operates-in-15-states-not-15-countries-removing-the-kenya-countries-wording-currently-present-in-that-section",
+      "title": "Update the About page “Our Story” section text to reflect the year 2021 (instead of 2010) and to state that the organization operates in 15 states (not 15 countries), removing the Kenya/countries wording currently present in that section.",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-about-page-our-leadership-team-section-so-the-director-of-programs-name-s-display-as-jitendra-kumar-and-prabhu-saw-instead-of-the-current-placeholder-name-currently-shown-as-michael-chen",
+      "title": "Update the About page (Our Leadership Team section) so the Director of Programs name(s) display as \"Jitendra Kumar\" and \"Prabhu Saw\" instead of the current placeholder name (currently shown as \"Michael Chen\").",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-about-page-our-leadership-team-section-so-the-team-member-with-role-director-of-operations-displays-the-name-kanhaiya-kumar-instead-of-the-current-name",
+      "title": "Update the About page (Our Leadership Team section) so the team member with role \"Director of Operations\" displays the name \"Kanhaiya Kumar\" instead of the current name.",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-about-page-leadership-team-section-update-the-executive-director-bio-text-by-changing-the-leading-experience-value-from-15-to-7-so-the-full-sentence-reads-exactly-7-years-of-experience-in-international-development-and-humanitarian-work",
+      "title": "On the About page leadership/team section, update the Executive Director bio text by changing the leading experience value from \"15+\" to \"7+\" so the full sentence reads exactly: \"7+ years of experience in international development and humanitarian work.\"",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-get-involved-volunteer-page-get-involved-update-the-main-hero-heading-text-from-get-involved-to-volunteer-with-us",
+      "title": "On the Get Involved (Volunteer) page (/get-involved), update the main hero heading text from \"Get Involved\" to \"Volunteer With Us\".",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-samarpan-trust-office-address-information-to-the-get-involved-volunteer-page-get-involved-as-a-clearly-labeled-address-block-section-using-the-same-address-text-currently-used-on-the-contact-page-and-in-the-footer-chhaperwa-sandh-barkagaon-hazaribagh-jharkhand-825311",
+      "title": "Add Samarpan Trust office address information to the Get Involved (Volunteer) page (/get-involved) as a clearly labeled \"Address\" block/section, using the same address text currently used on the Contact page and in the footer: \"Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311\".",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-get-involved-volunteer-page-get-involved-add-a-new-volunteer-opportunity-focused-on-environmental-work-with-the-user-facing-title-save-environment-and-make-it-selectable-in-the-area-of-interest-dropdown",
+      "title": "On the Get Involved (Volunteer) page (/get-involved), add a new volunteer opportunity focused on environmental work with the user-facing title \"Save Environment\", and make it selectable in the \"Area of Interest\" dropdown.",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-ngo-website-content-to-reflect-that-the-healthcare-initiative-is-active-and-operates-in-these-locations-jharkhand-bihar-dehli-apply-this-update-wherever-healthcare-is-presented-as-a-program-initiative-including-the-get-involved-volunteer-page-s-volunteer-opportunities-list-card-for-healthcare-the-programs-impact-page-s-healthcare-program-card",
+      "title": "Update the NGO website content to reflect that the Healthcare initiative is Active and operates in these locations: Jharkhand, Bihar, Dehli. Apply this update wherever Healthcare is presented as a program/initiative, including:\n- The Get Involved (Volunteer) page’s volunteer opportunities list/card for healthcare\n- The Programs & Impact page’s healthcare program card",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-programs-impact-page-update-the-clean-water-initiative-program-card-so-its-locations-served-text-displays-exactly-jharkhand-bihar-replacing-the-current-non-india-locations-list",
+      "title": "On the Programs & Impact page, update the \"Clean Water Initiative\" program card so its \"Locations Served\" text displays exactly: \"Jharkhand, Bihar\" (replacing the current non-India locations list).",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-get-involved-volunteer-page-update-the-clean-water-volunteer-opportunity-to-reflect-the-clean-water-initiative-and-show-its-locations-as-jharkhand-bihar-in-the-opportunity-card-and-ensure-the-user-facing-title-is-clean-water-initiative",
+      "title": "On the Get Involved (Volunteer) page, update the clean water volunteer opportunity to reflect the \"Clean Water Initiative\" and show its locations as \"Jharkhand, Bihar\" in the opportunity card (and ensure the user-facing title is \"Clean Water Initiative\").",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-existing-shelter-housing-program-on-the-programs-impact-page-so-its-locations-served-text-displays-exactly-india-replacing-the-current-non-india-locations-list-apply-this-change-anywhere-the-site-currently-displays-the-shelter-housing-program-s-locations",
+      "title": "Update the existing \"Shelter & Housing\" program on the Programs & Impact page so its \"Locations Served\" text displays exactly: \"India\" (replacing the current non-India locations list). Apply this change anywhere the site currently displays the \"Shelter & Housing\" program’s locations.",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-economic-empowerment-program-on-the-programs-impact-page-so-its-locations-served-text-displays-the-location-as-india-jharkhand-replacing-the-current-non-india-locations-list-apply-this-change-anywhere-the-site-currently-displays-the-economic-empowerment-program-s-locations",
+      "title": "Update the \"Economic Empowerment\" program on the Programs & Impact page so its \"Locations Served\" text displays the location as \"India, Jharkhand\" (replacing the current non-India locations list). Apply this change anywhere the site currently displays the Economic Empowerment program’s locations.",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -217,6 +351,84 @@
     {
       "id": "AR-16",
       "summary": "Fix the impact metric label/text: change \"Countries Served: 15\" to reflect states (e.g., \"States Served: 15\") since it is not 15 countries.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Update Donate page pledge form: donation amount should be in Indian Rupees (INR) and remove/replace the USD currency option/label.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Update the About/Team (leadership) section to include the Director of Fundraising name(s): Purushotam Kumar and Chandani Kumari.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Update the About/Team (leadership) section to show the Executive Director as \"Purushotam Kumar\".",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Update the \"Our Story\" section content to reflect the year 2021 (e.g., founding/start year) wherever applicable.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Update site leadership/team details to include Director of Programs name(s): Jitendra Kumar and Prabhu Saw.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Update the About/Team (leadership) section to include the Director of Operations name: Kanhaiya Kumar.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Update the About/Team (leadership) section Executive Director bio/experience text: change \"15+ years of experience in international development and humanitarian work\" to \"7+ years of experience in international development and humanitarian work\".",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Add the NGO office address to the \"Volunteer With Us\" (Get Involved/Volunteer) page.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Update the Get Involved/Volunteer page to add a \"Save Environment\" section/item (content about environmental initiative).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Update Get Involved/Volunteer content to include a \"Healthcare\" item/initiative marked as active, and list locations as: Jharkhand, Bihar, Delhi.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Add a \"Clean Water Initiative\" program/initiative to the website and specify its locations as: Jharkhand, Bihar.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "Add a new program/initiative \"Shelter & Housing\" and display its location as: India.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Add a new program/initiative named \"Economic Empowerment\" and display its location(s) as: India, Jharkhand.",
       "reqIds": [],
       "status": "pending"
     }

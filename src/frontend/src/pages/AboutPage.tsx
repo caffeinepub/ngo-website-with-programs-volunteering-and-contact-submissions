@@ -27,22 +27,32 @@ export default function AboutPage() {
 
   const team = [
     {
-      name: 'Sarah Johnson',
+      name: 'Purushotam Kumar',
       role: 'Executive Director',
-      bio: '15+ years of experience in international development and humanitarian work.',
+      bio: '7+ years of experience in international development and humanitarian work.',
     },
     {
-      name: 'Michael Chen',
+      name: 'Jitendra Kumar',
       role: 'Director of Programs',
       bio: 'Expert in sustainable development with a focus on education and healthcare initiatives.',
     },
     {
-      name: 'Amara Okafor',
+      name: 'Prabhu Saw',
+      role: 'Director of Programs',
+      bio: 'Expert in sustainable development with a focus on education and healthcare initiatives.',
+    },
+    {
+      name: 'Kanhaiya Kumar',
       role: 'Director of Operations',
       bio: 'Specializes in logistics and resource management for global NGO operations.',
     },
     {
-      name: 'David Martinez',
+      name: 'Purushotam Kumar',
+      role: 'Director of Fundraising',
+      bio: 'Passionate about building partnerships and securing resources for impactful projects.',
+    },
+    {
+      name: 'Chandani Kumari',
       role: 'Director of Fundraising',
       bio: 'Passionate about building partnerships and securing resources for impactful projects.',
     },
@@ -58,7 +68,7 @@ export default function AboutPage() {
               About Samarpan Trust
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">
-              Since 2010, we've been dedicated to creating positive change in communities worldwide through education, healthcare, and sustainable development.
+              Since 2021, we've been dedicated to creating positive change in communities worldwide through education, healthcare, and sustainable development.
             </p>
           </div>
         </div>
@@ -172,10 +182,10 @@ export default function AboutPage() {
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
               <p>
-                Samarpan Trust was born from a simple belief: that everyone deserves access to the basic necessities that enable them to thrive. In 2010, a group of passionate individuals came together with a shared vision of creating meaningful change in underserved communities around the world.
+                Samarpan Trust was born from a simple belief: that everyone deserves access to the basic necessities that enable them to thrive. In 2021, a group of passionate individuals came together with a shared vision of creating meaningful change in underserved communities around the world.
               </p>
               <p>
-                What started as a small education initiative in rural Kenya has grown into a comprehensive organization operating in 15 countries across three continents. Over the years, we've expanded our focus to include healthcare access, clean water infrastructure, and sustainable economic development programs.
+                What started as a small education initiative has grown into a comprehensive organization operating in 15 states. Over the years, we've expanded our focus to include healthcare access, clean water infrastructure, and sustainable economic development programs.
               </p>
               <p>
                 Today, with the support of over 2,500 volunteers and thousands of donors, we've impacted more than 50,000 lives. But our work is far from over. Every day, we continue to push forward, driven by the stories of transformation we witness and the communities we serve.

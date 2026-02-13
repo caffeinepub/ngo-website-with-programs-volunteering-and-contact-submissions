@@ -2,10 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-impact-metric-copy-so-it-no-longer-claims-the-ngo-serves-15-countries-it-should-clearly-indicate-15-states-served-instead-english-text-apply-this-change-anywhere-the-site-currently-displays-this-specific-metric",
-      "featureTitle": "Update the impact metric copy so it no longer claims the NGO serves 15 countries; it should clearly indicate 15 states served instead (English text). Apply this change anywhere the site currently displays this specific metric.",
+      "featureId": "feature-update-the-economic-empowerment-program-on-the-programs-impact-page-so-its-locations-served-text-displays-the-location-as-india-jharkhand-replacing-the-current-non-india-locations-list-apply-this-change-anywhere-the-site-currently-displays-the-economic-empowerment-program-s-locations",
+      "featureTitle": "Update the \"Economic Empowerment\" program on the Programs & Impact page so its \"Locations Served\" text displays the location as \"India, Jharkhand\" (replacing the current non-India locations list). Apply this change anywhere the site currently displays the Economic Empowerment program’s locations.",
       "files": [
-        "frontend/src/pages/HomePage.tsx",
         "frontend/src/pages/ProgramsImpactPage.tsx"
       ],
       "components": [
@@ -17,7 +16,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-21"
+        "REQ-37"
       ],
       "confidence": "high"
     }

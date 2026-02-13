@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-13T19:34:07.270Z",
+  "generatedAt": "2026-02-13T20:35:29.013Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,15 +11,13 @@
     "implemented": 1,
     "items": [
       {
-        "id": "REQ-21",
-        "summary": "Update the impact metric copy so it no longer claims the NGO serves 15 countries; it should clearly indicate 15 states served instead (English text). Apply this change anywhere the site currently displays this specific metric.",
+        "id": "REQ-37",
+        "summary": "Update the \"Economic Empowerment\" program on the Programs & Impact page so its \"Locations Served\" text displays the location as \"India, Jharkhand\" (replacing the current non-India locations list). Apply this change anywhere the site currently displays the Economic Empowerment program’s locations.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/HomePage.tsx",
           "frontend/src/pages/ProgramsImpactPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/HomePage.tsx",
           "frontend/src/pages/ProgramsImpactPage.tsx"
         ]
       }
@@ -30,7 +28,6 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/src/pages/HomePage.tsx",
     "frontend/src/pages/ProgramsImpactPage.tsx",
     "project_state.json",
     "scratch/component-selection.json",

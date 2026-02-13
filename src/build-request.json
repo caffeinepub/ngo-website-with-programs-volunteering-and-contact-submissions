@@ -1,36 +1,46 @@
 {
   "kind": "build_request",
-  "title": "Fix impact metric to show States Served instead of Countries Served",
+  "title": "Update Economic Empowerment program location to India (Jharkhand)",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-21",
-      "text": "Update the impact metric copy so it no longer claims the NGO serves 15 countries; it should clearly indicate 15 states served instead (English text). Apply this change anywhere the site currently displays this specific metric.",
+      "id": "REQ-37",
+      "text": "Update the \"Economic Empowerment\" program on the Programs & Impact page so its \"Locations Served\" text displays the location as \"India, Jharkhand\" (replacing the current non-India locations list). Apply this change anywhere the site currently displays the Economic Empowerment program’s locations.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-3"
         ],
         "quotes": [
-          "Countries Served 15 country is not only State in 15"
+          "Economic Empowerment \n\nLocation  India Jharkhand"
         ]
       },
       "acceptanceCriteria": [
-        "On the Home page impact metrics strip, the metric with value \"15\" no longer uses the label \"Countries\" and instead uses \"States\" or \"States Served\".",
-        "On the Programs/Impact page \"Collective Impact\" summary, the metric with value \"15\" no longer displays \"Countries Served\" and instead displays \"States Served\" (or equivalent wording that clearly indicates states, not countries).",
-        "No other impact metric values are changed."
+        "On /programs, the Economic Empowerment program card shows \"Locations Served\" as exactly: \"India, Jharkhand\".",
+        "The previous locations text \"Cambodia, Myanmar, Bolivia, Nicaragua\" is no longer displayed anywhere on the site."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui (immutable paths)."
+    "Do not edit files in frontend immutablePaths (authentication hooks, main.tsx, or frontend/src/components/ui).",
+    "Keep all backend logic in the single Motoko actor (backend/main.mo); do not add additional backend services."
   ],
   "nonGoals": [
-    "Do not change the numeric value (15) for the metric.",
-    "Do not add new backend fields or endpoints for this change."
+    "Do not change the Economic Empowerment program title, status, description, or impact metrics.",
+    "Do not add new forms, backend storage, or admin functionality related to programs."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

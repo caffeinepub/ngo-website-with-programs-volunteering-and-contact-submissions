@@ -1,11 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Correct the NGO impact metric wording so the value “15” is described as states served (not countries) everywhere it appears.
+**Goal:** Update the displayed location(s) served for the “Economic Empowerment” program to “India, Jharkhand” across the site.
 
 **Planned changes:**
-- Update the Home page impact metrics strip label for the “15” metric from “Countries Served” (or “Countries”) to “States Served” (or equivalent wording that clearly indicates states).
-- Update the Programs/Impact page “Collective Impact” summary label for the “15” metric to “States Served” (or equivalent wording that clearly indicates states).
-- Ensure only the copy/label changes and the numeric value “15” remains unchanged across the site.
+- Update the “Economic Empowerment” program’s “Locations Served” text to exactly “India, Jharkhand” on the Programs & Impact page (/programs).
+- Replace any other occurrences on the site where “Economic Empowerment” locations are shown so the previous list (“Cambodia, Myanmar, Bolivia, Nicaragua”) is no longer displayed.
 
-**User-visible outcome:** Anywhere the site shows the “15” impact metric, it will read as “States Served” rather than “Countries Served,” without changing any metric values.
+**User-visible outcome:** Anywhere the site shows the Economic Empowerment program’s locations (including the /programs card), it will display “India, Jharkhand” and not the prior non-India locations.

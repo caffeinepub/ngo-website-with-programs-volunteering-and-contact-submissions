@@ -28,7 +28,7 @@ export default function ProgramsImpactPage() {
         '200+ healthcare workers trained',
         '50+ health camps organized yearly',
       ],
-      locations: 'Bangladesh, Nepal, Ethiopia, Haiti',
+      locations: 'Jharkhand, Bihar, Dehli',
     },
     {
       icon: Droplet,
@@ -41,7 +41,7 @@ export default function ProgramsImpactPage() {
         '30 water filtration systems installed',
         '200+ communities reached',
       ],
-      locations: 'Mali, Niger, Burkina Faso, Senegal',
+      locations: 'Jharkhand, Bihar',
     },
     {
       icon: Sprout,
@@ -67,7 +67,7 @@ export default function ProgramsImpactPage() {
         '15 community centers constructed',
         '100% disaster-resistant structures',
       ],
-      locations: 'Philippines, Indonesia, Honduras, Peru',
+      locations: 'India',
     },
     {
       icon: Briefcase,
@@ -80,7 +80,7 @@ export default function ProgramsImpactPage() {
         '$2M+ in microloans distributed',
         '75% business success rate',
       ],
-      locations: 'Cambodia, Myanmar, Bolivia, Nicaragua',
+      locations: 'India, Jharkhand',
     },
   ];
 
@@ -126,34 +126,35 @@ export default function ProgramsImpactPage() {
                       <Icon className="h-8 w-8 text-primary" />
                     </div>
                   </div>
-                  <div className="pr-6 pb-6 md:pr-8 md:pb-8">
-                    <CardHeader className="p-0 pb-4">
-                      <div className="flex items-start justify-between gap-4 flex-wrap">
+                  <div className="p-6 md:pr-8 md:pl-0">
+                    <CardHeader className="p-0 mb-4">
+                      <div className="flex items-center gap-3 mb-2">
                         <CardTitle className="text-2xl">{program.title}</CardTitle>
-                        <Badge variant="secondary" className="shrink-0">
-                          {program.status}
-                        </Badge>
+                        <Badge variant="default">{program.status}</Badge>
                       </div>
-                      <CardDescription className="text-base leading-relaxed pt-2">
+                      <CardDescription className="text-base">
                         {program.description}
                       </CardDescription>
-                      <div className="text-sm text-muted-foreground pt-2">
-                        <span className="font-medium">Locations:</span> {program.locations}
-                      </div>
                     </CardHeader>
-                    <CardContent className="p-0">
-                      <div className="space-y-2">
-                        <h4 className="text-sm font-semibold uppercase tracking-wider text-primary">
-                          Impact Metrics
+                    <CardContent className="p-0 space-y-4">
+                      <div>
+                        <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-3">
+                          Key Impact Metrics
                         </h4>
-                        <ul className="grid gap-2 sm:grid-cols-2">
+                        <ul className="grid sm:grid-cols-2 gap-2">
                           {program.impact.map((metric, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm">
                               <span className="text-primary mt-1">•</span>
-                              <span className="text-muted-foreground">{metric}</span>
+                              <span>{metric}</span>
                             </li>
                           ))}
                         </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-sm uppercase tracking-wide text-muted-foreground mb-2">
+                          Locations Served
+                        </h4>
+                        <p className="text-sm text-muted-foreground">{program.locations}</p>
                       </div>
                     </CardContent>
                   </div>
@@ -164,30 +165,60 @@ export default function ProgramsImpactPage() {
         </div>
       </section>
 
-      {/* Impact Summary */}
-      <section className="bg-gradient-to-br from-primary/5 via-background to-accent/5 py-16 md:py-24">
+      {/* Collective Impact Summary */}
+      <section className="bg-muted/30 py-16 md:py-24">
         <div className="container">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Collective Impact
             </h2>
             <p className="text-lg text-muted-foreground">
-              Through our integrated approach, we've created a ripple effect of positive change that extends far beyond individual programs. By addressing multiple aspects of community development simultaneously, we ensure sustainable, long-term transformation.
+              Together, our programs create a comprehensive approach to sustainable development, addressing interconnected challenges and empowering communities to build better futures.
             </p>
-            <div className="grid gap-6 sm:grid-cols-3 pt-8">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 pt-8">
               <div className="space-y-2">
                 <div className="text-4xl font-bold text-primary">50,000+</div>
                 <div className="text-sm text-muted-foreground">Lives Directly Impacted</div>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl font-bold text-primary">200,000+</div>
-                <div className="text-sm text-muted-foreground">Indirect Beneficiaries</div>
+                <div className="text-4xl font-bold text-primary">200+</div>
+                <div className="text-sm text-muted-foreground">Communities Served</div>
               </div>
               <div className="space-y-2">
                 <div className="text-4xl font-bold text-primary">15</div>
                 <div className="text-sm text-muted-foreground">States Served</div>
               </div>
+              <div className="space-y-2">
+                <div className="text-4xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">Transparency & Accountability</div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="container py-16 md:py-24">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Join Us in Making a Difference
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Your support enables us to expand our programs and reach more communities in need. Whether through donations, volunteering, or partnerships, there are many ways to get involved.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+            <a
+              href="/donate"
+              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              Donate Now
+            </a>
+            <a
+              href="/get-involved"
+              className="inline-flex items-center justify-center rounded-full border border-input bg-background px-8 py-3 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              Volunteer With Us
+            </a>
           </div>
         </div>
       </section>

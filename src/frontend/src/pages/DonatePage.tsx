@@ -79,22 +79,22 @@ export default function DonatePage() {
 
   const impactExamples = [
     {
-      amount: '$50',
+      amount: '₹500',
       impact: 'Provides school supplies for 5 children',
       icon: Users,
     },
     {
-      amount: '$100',
+      amount: '₹1,000',
       impact: 'Funds a week of medical care in a remote clinic',
       icon: Heart,
     },
     {
-      amount: '$250',
+      amount: '₹5,000',
       impact: 'Builds a clean water well for a small community',
       icon: TrendingUp,
     },
     {
-      amount: '$500',
+      amount: '₹10,000',
       impact: 'Sponsors a full year of education for a student',
       icon: Shield,
     },
@@ -196,7 +196,7 @@ export default function DonatePage() {
 
                 <div className="space-y-2">
                   <Label htmlFor="amount">
-                    Donation Amount (USD) <span className="text-destructive">*</span>
+                    Donation Amount (INR) <span className="text-destructive">*</span>
                   </Label>
                   <Input
                     id="amount"
@@ -205,7 +205,7 @@ export default function DonatePage() {
                     step="0.01"
                     value={formData.amount}
                     onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
-                    placeholder="50.00"
+                    placeholder="500"
                     required
                   />
                 </div>
@@ -292,7 +292,7 @@ export default function DonatePage() {
                   At Samarpan Trust, we believe in complete transparency. Every donation is tracked and reported, and we provide regular updates on how funds are being used to create positive change.
                 </p>
                 <p>
-                  We undergo annual independent audits and publish detailed financial reports. Your trust is important to us, and we work hard to ensure every dollar makes the maximum impact.
+                  We undergo annual independent audits and publish detailed financial reports. Your trust is important to us, and we work hard to ensure every rupee makes the maximum impact.
                 </p>
                 <p>
                   For questions about donations or to request our latest financial report, please contact us at samarpantrust2@gmail.com or call our office at 9162667748.
