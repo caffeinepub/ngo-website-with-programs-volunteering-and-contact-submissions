@@ -1,0 +1,228 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 21,
+  "summary": "Build a website for an NGO.",
+  "architectural_notes": [
+    "NGO name: Samarpan Trust.",
+    "Public contact details to display: Contact no 7979882539; WhatsApp no 8651677735; Email samarpantrust2@gmail.com; Office no 9162667748.",
+    "Office address to display: Chhaperwa, Sandh, Barkagaon, Hazaribagh, Jharkhand 825311.",
+    "Year text to use: 2025 (likely footer/copyright).",
+    "Tagline to use on the site: \"Making a Difference Since 2021\"."
+  ],
+  "known_issues": [
+    "Homepage/impact metrics copy is incorrect: shows \"Countries Served: 15\" but should reference states instead of countries."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-ngo-marketing-website-with-these-top-level-pages-sections-home-about-programs-impact-get-involved-volunteer-donate-and-contact",
+      "title": "Create a responsive NGO marketing website with these top-level pages/sections: Home, About, Programs/Impact, Get Involved (Volunteer), Donate, and Contact.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-visual-theme-appropriate-for-an-ngo-and-enforce-it-consistently-across-the-site-color-palette-typography-spacing-buttons-section-layout-do-not-use-a-blue-purple-theme",
+      "title": "Apply a cohesive visual theme appropriate for an NGO and enforce it consistently across the site (color palette, typography, spacing, buttons, section layout). Do not use a blue/purple theme.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-home-page-with-a-hero-section-headline-short-mission-statement-primary-cta-buttons-a-quick-impact-metrics-strip-featured-programs-preview-and-a-latest-updates-news-preview-area-static-content-is-acceptable-for-initial-build",
+      "title": "Implement the Home page with: a hero section (headline, short mission statement, primary CTA buttons), a quick impact metrics strip, featured programs preview, and a latest updates/news preview area (static content is acceptable for initial build).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-an-about-page-that-includes-mission-vision-values-and-a-small-team-leadership-section-static-content-for-initial-build",
+      "title": "Implement an About page that includes mission, vision, values, and a small team/leadership section (static content for initial build).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-programs-impact-page-that-lists-at-least-3-programs-with-a-title-short-description-and-impact-details-static-content-for-initial-build",
+      "title": "Implement a Programs/Impact page that lists at least 3 programs with a title, short description, and impact details (static content for initial build).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-get-involved-volunteer-page-with-a-volunteer-interest-form-name-email-area-of-interest-availability-message-and-submit-it-to-the-backend-for-storage",
+      "title": "Implement a Get Involved (Volunteer) page with a volunteer interest form (name, email, area of interest, availability, message) and submit it to the backend for storage.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-contact-page-with-a-contact-form-name-email-subject-message-and-submit-it-to-the-backend-for-storage",
+      "title": "Implement a Contact page with a contact form (name, email, subject, message) and submit it to the backend for storage.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-donate-page-that-clearly-explains-donation-options-and-includes-a-non-payment-pledge-form-name-email-amount-optional-message-stored-in-the-backend-do-not-integrate-any-payment-provider-in-this-initial-build",
+      "title": "Implement a Donate page that clearly explains donation options and includes a non-payment “pledge” form (name, email, amount, optional message) stored in the backend. Do not integrate any payment provider in this initial build.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-footer-with-ngo-basics-short-mission-line-quick-links-social-placeholders-and-contact-info-placeholders-and-ensure-consistent-accessibility-basics-semantic-headings-labeled-inputs-focus-styles",
+      "title": "Add a footer with NGO basics (short mission line, quick links, social placeholders, and contact info placeholders) and ensure consistent accessibility basics (semantic headings, labeled inputs, focus styles).",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-include-required-static-image-assets-in-the-frontend-and-render-them-in-the-ui-from-frontend-public-assets-generated-do-not-serve-images-through-the-backend",
+      "title": "Generate and include required static image assets in the frontend and render them in the UI from frontend/public/assets/generated (do not serve images through the backend).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-user-facing-branding-text-across-the-website-to-use-the-ngo-name-samarpan-trust-instead-of-hope-foundation-including-header-footer-page-headings-body-copy-where-the-ngo-name-is-referenced-and-the-browser-tab-title",
+      "title": "Update all user-facing branding text across the website to use the NGO name \"Samarpan Trust\" instead of \"Hope Foundation\" (including header, footer, page headings/body copy where the NGO name is referenced, and the browser tab title).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-text-content-of-the-user-selected-span-element-at-xpath-html-1-body-1-div-1-div-1-main-1-div-1-section-1-div-1-div-1-div-1-span-1-to-display-office-9162667748",
+      "title": "Update the text content of the user-selected span element at XPath /html[1]/body[1]/div[1]/div[1]/main[1]/div[1]/section[1]/div[1]/div[1]/div[1]/span[1] to display: \"Office: 9162667748\".",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-placeholder-contact-details-across-the-site-with-the-provided-samarpan-trust-contact-information-updating-at-minimum-the-contact-page-contact-cards-and-the-footer-contact-section",
+      "title": "Replace placeholder contact details across the site with the provided Samarpan Trust contact information, updating at minimum the Contact page contact cards and the footer Contact section.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-uploaded-samarpan-trust-logo-as-a-static-generated-asset-and-update-the-header-and-footer-to-use-this-logo-image-consistently-including-appropriate-alt-text",
+      "title": "Add the uploaded Samarpan Trust logo as a static generated asset and update the header and footer to use this logo image consistently (including appropriate alt text).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-updated-samarpan-trust-logo-image-assets-from-the-newly-uploaded-file-img-20260214-wa0000-1-jpg-and-update-the-site-to-use-the-new-logo-everywhere-the-current-generated-logo-assets-are-referenced-header-footer-and-favicon",
+      "title": "Generate updated Samarpan Trust logo image assets from the newly uploaded file (IMG-20260214-WA0000-1.jpg) and update the site to use the new logo everywhere the current generated logo assets are referenced (header, footer, and favicon).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-hero-tagline-text-to-exactly-making-a-difference-since-2015-replacing-the-existing-making-a-difference-since-2010-text-shown-in-the-hero-badge",
+      "title": "Update the Home page hero tagline text to exactly: \"Making a Difference Since 2015\" (replacing the existing \"Making a Difference Since 2010\" text shown in the hero badge).",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-office-9162667748-text-currently-rendered-inside-the-home-page-hero-headline-the-highlighted-span-in-the-main-h1-leaving-the-headline-as-plain-hero-copy-without-the-office-number",
+      "title": "Remove the \"Office: 9162667748\" text currently rendered inside the Home page hero headline (the highlighted span in the main H1), leaving the headline as plain hero copy without the office number.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-specific-latest-updates-item-whose-title-is-new-school-opens-in-rural-kenya-and-whose-excerpt-is-thanks-to-our-supporters-300-children-now-have-access-to-quality-education-from-the-home-page-so-this-content-is-no-longer-displayed-anywhere-on-the-site",
+      "title": "Remove the specific Latest Updates item whose title is \"New School Opens in Rural Kenya\" and whose excerpt is \"Thanks to our supporters, 300 children now have access to quality education.\" from the Home page so this content is no longer displayed anywhere on the site.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-home-page-hero-badge-tagline-text-to-exactly-making-a-difference-since-2021-replacing-the-current-making-a-difference-since-2015-text-shown-in-the-hero-badge-on-the-home-page",
+      "title": "Update the Home page hero badge/tagline text to exactly: \"Making a Difference Since 2021\" (replacing the current \"Making a Difference Since 2015\" text shown in the hero badge on the Home page).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-impact-metric-copy-so-it-no-longer-claims-the-ngo-serves-15-countries-it-should-clearly-indicate-15-states-served-instead-english-text-apply-this-change-anywhere-the-site-currently-displays-this-specific-metric",
+      "title": "Update the impact metric copy so it no longer claims the NGO serves 15 countries; it should clearly indicate 15 states served instead (English text). Apply this change anywhere the site currently displays this specific metric.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website for an NGO.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Backend: create Motoko data models and stable storage for contact messages, volunteer interests, and donation pledges; provide create + list query endpoints for each type.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Update site contact details (phone/office/WhatsApp/email) and office address across relevant sections (e.g., Contact page + footer/contact info).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Add an NGO logo to the website (generate/import logo asset and place it in header and other relevant areas).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Remove the \"New School Opens in Rural Kenya\" / \"Thanks to our supporters, 300 children now have access to quality education.\" content from the website (likely the Home page latest updates/news section).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Update site tagline/hero text to: \"Making a Difference Since 2021\".",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Fix the impact metric label/text: change \"Countries Served: 15\" to reflect states (e.g., \"States Served: 15\") since it is not 15 countries.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Samarpan Trust",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

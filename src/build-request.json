@@ -1,0 +1,36 @@
+{
+  "kind": "build_request",
+  "title": "Fix impact metric to show States Served instead of Countries Served",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "text": "Update the impact metric copy so it no longer claims the NGO serves 15 countries; it should clearly indicate 15 states served instead (English text). Apply this change anywhere the site currently displays this specific metric.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Countries Served 15 country is not only State in 15"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On the Home page impact metrics strip, the metric with value \"15\" no longer uses the label \"Countries\" and instead uses \"States\" or \"States Served\".",
+        "On the Programs/Impact page \"Collective Impact\" summary, the metric with value \"15\" no longer displays \"Countries Served\" and instead displays \"States Served\" (or equivalent wording that clearly indicates states, not countries).",
+        "No other impact metric values are changed."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui (immutable paths)."
+  ],
+  "nonGoals": [
+    "Do not change the numeric value (15) for the metric.",
+    "Do not add new backend fields or endpoints for this change."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

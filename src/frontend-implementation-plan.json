@@ -1,0 +1,28 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Update impact metric copy: Countries Served → States Served",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "summary": "Replace the impact metric label for value \"15\" so it clearly indicates \"States Served\" (not countries) everywhere it appears on the site.",
+      "acceptanceCriteria": [
+        "On the Home page impact metrics strip, the metric with value \"15\" no longer uses the label \"Countries\" and instead uses \"States\" or \"States Served\".",
+        "On the Programs/Impact page \"Collective Impact\" summary, the metric with value \"15\" no longer displays \"Countries Served\" and instead displays \"States Served\" (or equivalent wording that clearly indicates states, not countries).",
+        "No other impact metric values are changed."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Update the impactMetrics entry with value \"15\" to use a label that clearly communicates states (e.g., change label from \"Countries\" to \"States Served\"), without changing the numeric value or other metric labels/values."
+        },
+        {
+          "path": "frontend/src/pages/ProgramsImpactPage.tsx",
+          "operation": "modify",
+          "description": "In the \"Collective Impact\" summary section, replace the label \"Countries Served\" associated with the value \"15\" to \"States Served\" (or equivalent states-focused wording), without changing the numeric value or any other metrics."
+        }
+      ]
+    }
+  ]
+}

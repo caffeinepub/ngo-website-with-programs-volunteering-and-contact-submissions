@@ -1,0 +1,15 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-13T19:34:07.268Z",
+  "summary": "REQ-21 appears to be implemented by changing the impact metric label for the value \"15\" from countries to states on the Home page metrics strip, and (per the diff summary text) on the Programs/Impact page \"Collective Impact\" summary. No evidence in the provided diff summary indicates the numeric value \"15\" was changed or that new backend fields/endpoints were added.",
+  "missing_requirements": [],
+  "hallucinated_features": [],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/ProgramsImpactPage.tsx",
+    "project_state.json"
+  ]
+}
